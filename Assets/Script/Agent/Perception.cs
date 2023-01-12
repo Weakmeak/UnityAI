@@ -6,6 +6,7 @@ public class Perception : MonoBehaviour
 {
     [Range(1, 40)] public float distance = 1.5f;
     [Range(0 , 180)] public float FOV = 45;
+
     public string TagName = "";
 
     public GameObject[] GetGameObjects()
@@ -16,7 +17,9 @@ public class Perception : MonoBehaviour
 
         foreach (var col in colliders)
         {
+
             if (col.gameObject == gameObject) continue;
+
             if(TagName == "" || col.CompareTag(TagName))
             {
                 Vector3 direction = (col.transform.position - transform.position).normalized;
@@ -26,8 +29,15 @@ public class Perception : MonoBehaviour
             }
         }
 
-        
+        result.Sort(CompareDistance);
 
         return result.ToArray();
+    }
+
+    public int CompareDistance(GameObject a, GameObject b)
+    {
+        float squaredRangeA = (a.transform.position - transform.position).sqrMagnitude;
+        float squaredRangeB = (b.transform.position - transform.position).sqrMagnitude;
+        return squaredRangeA.CompareTo(squaredRangeB);
     }
 }

@@ -21,4 +21,9 @@ public class Utilities : MonoBehaviour
 
         return result;
     }
+
+    public static Vector3 ClapMagnitude(Vector3 v, float min, float max)
+    {
+        return v.normalized * Mathf.Clamp(v.magnitude, min, max);
+    }
 }
