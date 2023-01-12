@@ -113,9 +113,10 @@ GameObject:
   - component: {fileID: 1639841492852034073}
   - component: {fileID: 1639841492852034074}
   - component: {fileID: 1639841492852034147}
+  - component: {fileID: -2989147842181112964}
   m_Layer: 0
-  m_Name: Agent
-  m_TagString: Untagged
+  m_Name: Agent_02
+  m_TagString: Agent02
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -150,9 +151,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   perception: {fileID: 1639841492852034077}
   movement: {fileID: 1639841492852034078}
+  flockPerception: {fileID: -2989147842181112964}
   wanderDistance: 1
   wanderRadius: 3
   wanderDisplacement: 5
+  FleeWeight: 0
+  SeekWeight: 1
 --- !u!114 &1639841492852034077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d24098cdbe236464ea730c143ad7b59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 5
-  FOV: 30
+  distance: 25.5
+  FOV: 35
   TagName: Agent01
 --- !u!114 &1639841492852034078
 MonoBehaviour:
@@ -211,7 +215,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7737d280248b6fa4397aeb4107127463, type: 2}
+  - {fileID: 2100000, guid: 42ca1b3c36878724688fe2cecc18bc3c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -263,3 +267,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
+--- !u!114 &-2989147842181112964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639841492852034075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d24098cdbe236464ea730c143ad7b59c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distance: 25.5
+  FOV: 150
+  TagName: Agent02

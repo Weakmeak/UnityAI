@@ -36,9 +36,41 @@ public static class Steering
 
         Vector3 force = CalculateSteering(agent, forward + point);
 
+        Debug.DrawRay(agent.transform.position, forward + point, Color.red);
+
         force.y = 0f;
 
         return force;
+    }
+
+    public static Vector3 Cohesion(Agent agent, GameObject[] neighbors)
+    {
+        Vector3 center = Vector3.zero;
+
+        foreach (var neigh in neighbors)
+        {
+            center += neigh.transform.position;
+        }
+
+        center /= neighbors.Length;
+
+        Vector3 direction = center - agent.transform.position;
+
+        Vector3 force = CalculateSteering(agent, direction);
+
+        force.y = 0f;
+
+        return force;
+    }
+
+    public static Vector3 Separation(Agent agent, GameObject[] neighbors, float sepaRadius)
+    {
+        return Vector3.zero;
+    }
+
+    public static Vector3 Alignment(Agent agent, GameObject[] neighbors)
+    { 
+        return Vector3.zero;
     }
 
     public static Vector3 CalculateSteering(Agent agent, Vector3 direction)
