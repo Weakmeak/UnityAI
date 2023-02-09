@@ -27,7 +27,7 @@ public class WanderState : State
     {
         Debug.DrawLine(owner.transform.position, target);
         owner.movement.MoveTowards(target);
-        if (owner.GetComponent<Rigidbody>().velocity.magnitude <= 0) 
+        if (owner.GetComponent<Rigidbody>().velocity.magnitude <= 0.5f || Vector3.Distance(owner.transform.position, target) < 0.75) 
         {
             owner.stateMachine.StartState(nameof(IdleState));
         }

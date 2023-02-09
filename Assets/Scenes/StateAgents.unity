@@ -3158,6 +3158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agents:
   - {fileID: 5387861407563780308, guid: 011ea293e97d4a7478f9d91862fd8208, type: 3}
+  - {fileID: 5387861407563780308, guid: 39b7534caefb5624fb0fc771ac0b91c6, type: 3}
   layerMask:
     serializedVersion: 2
     m_Bits: 136
@@ -7873,9 +7874,9 @@ PrefabInstance:
       value: State Agent 01
       objectReference: {fileID: 0}
     - target: {fileID: 5387861407563780308, guid: 011ea293e97d4a7478f9d91862fd8208, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 963194227}
+      propertyPath: health.value
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5387861407563780310, guid: 011ea293e97d4a7478f9d91862fd8208, type: 3}
       propertyPath: m_RootOrder
       value: 6

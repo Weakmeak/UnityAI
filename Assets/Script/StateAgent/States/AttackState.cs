@@ -23,6 +23,17 @@ public class AttackState : State
 
         AnimationClip clip = clips.FirstOrDefault<AnimationClip>(clip => clip.name == "Punch");
         timer = (clip != null) ? clip.length : 1;
+
+        var collisions = Physics.OverlapSphere(owner.transform.position, 1.5f);
+
+        foreach (var collision in collisions)
+        {
+            if (collision.gameObject == collision.gameObject || collision.gameObject.CompareTag(owner.gameObject.tag)) continue;
+
+            collision.gameObject.TryGetComponent<StateAgent>(out var saComponent);
+
+            saComponent.health.value -= Random.RandomRange(25, 63);
+        }
     }
 
     public override void OnExit()

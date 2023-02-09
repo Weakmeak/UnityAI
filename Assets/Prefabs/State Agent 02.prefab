@@ -50,8 +50,8 @@ GameObject:
   - component: {fileID: 5387861407563780304}
   - component: {fileID: 5387861407563780318}
   m_Layer: 0
-  m_Name: State Agent 01
-  m_TagString: Agent01
+  m_Name: State Agent 02
+  m_TagString: Agent02
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f08bb084240774ebfa7ccd575d32f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tagName: Agent02
+  tagName: Agent01
   distance: 2.3
   maxAngle: 103.3
   raycastTransform: {fileID: 5387861405677772086}
@@ -307,6 +307,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Alien Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 1172324090021531726, guid: 949c9e2b298ee10408bcf02bdad7dc94, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f68fe4295108b0e4987d0176a6fe4ed2, type: 2}
+    - target: {fileID: 1172324090021531726, guid: 949c9e2b298ee10408bcf02bdad7dc94, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7737d280248b6fa4397aeb4107127463, type: 2}
     - target: {fileID: 5866666021909216657, guid: 949c9e2b298ee10408bcf02bdad7dc94, type: 3}
       propertyPath: m_Controller
       value: 
